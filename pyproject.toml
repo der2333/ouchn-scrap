@@ -1,0 +1,14 @@
+[project]
+name = "ouchn-scrap"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "playwright>=1.58.0",
+    "questionary",
+]
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
