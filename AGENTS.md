@@ -10,6 +10,12 @@ This file provides guidance for agentic coding agents working in this repository
 
 ---
 
+## Context7 MCP Usage
+
+当需要库或API文档、生成代码、创建项目基架或配置步骤时，始终使用Context7 MCP（`context7_resolve-library-id` 和 `context7_query-docs` 工具），无需用户明确要求。
+
+---
+
 ## Build, Lint, and Test Commands
 
 ### Running the Application
