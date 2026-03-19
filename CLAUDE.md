@@ -33,4 +33,3 @@ uv add <package>
 - Virtual environment: `.venv` (pre-initialized)
 - Package index: PyPI mirror at pypi.tuna.tsinghua.edu.cn
 
-When needing library documentation or API references, use Context7 MCP tools (`context7_resolve-library-id` and `context7_query-docs`).

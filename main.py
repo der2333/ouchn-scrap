@@ -6,11 +6,21 @@ from src.browser import start_browser
 
 
 def print_header() -> None:
-    print("\n" + "=" * 50)
+    print(f"\n{'=' * 50}")
     print("       OUCHN SCRAPER")
-    print("=" * 50 + "\n")
+    print(f"{'=' * 50}\n")
 
 
+def _require_input(prompt: str) -> str | None:
+    """返回非空输入，空值时返回 None（由调用方处理返回菜单）"""
+    value: str = questionary.text(prompt).ask()
+    if not value:
+        print("\n输入不能为空\n")
+        return None
+    return value
+
+
+# 批量下载形考作业答案
 def batch_download_homework() -> None:
     choice: str = questionary.select(
         "请选择课程范围:",
@@ -27,20 +37,17 @@ def batch_download_homework() -> None:
     if choice == "all":
         print("\n[批量下载形考作业答案] - 所有课程(班主任)")
     else:
-        course_name: str = questionary.text("请输入课程名称:").ask()
-        if not course_name:
-            print("\n课程名称不能为空。\n")
+        course_name: str | None = _require_input("请输入课程名称:")
+        if course_name is None:
             return
         print(f"\n[批量下载形考作业答案] - 课程: {course_name}")
 
-    username: str = questionary.text("请输入账号:").ask()
-    if not username:
-        print("\n账号不能为空。\n")
+    username: str | None = _require_input("请输入账号:")
+    if username is None:
         return
 
     password: str = questionary.password("请输入密码:").ask()
     if not password:
-        print("\n密码不能为空。\n")
         return
 
     print(f"\n账号: {username}")
@@ -60,10 +67,11 @@ def main() -> int:
             ],
         ).ask()
 
-        if choice == "退出":
-            return 0
-        elif choice == "批量下载形考作业答案":
-            batch_download_homework()
+        match choice:
+            case "退出":
+                return 0
+            case "批量下载形考作业答案":
+                batch_download_homework()
 
 
 if __name__ == "__main__":
