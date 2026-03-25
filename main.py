@@ -21,7 +21,7 @@ def _require_input(prompt: str) -> str | None:
 
 
 # 批量下载形考作业答案
-def batch_download_homework() -> None:
+def download_formative_homework() -> None:
     choice: str = questionary.select(
         "请选择课程范围:",
         choices=[
@@ -50,9 +50,8 @@ def batch_download_homework() -> None:
     if not password:
         return
 
-    print(f"\n账号: {username}")
-    start_browser(username, password)
-    print("下载完成！\n")
+    print(f"\n账号: {username}\n")
+    start_browser(username, password, "download_formative_homework")
 
 
 def main() -> int:
@@ -71,7 +70,7 @@ def main() -> int:
             case "退出":
                 return 0
             case "批量下载形考作业答案":
-                batch_download_homework()
+                download_formative_homework()
 
 
 if __name__ == "__main__":
