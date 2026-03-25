@@ -9,11 +9,17 @@ Python web scraper for ouchn.cn (国家开放大学学习平台) using Playwrigh
 ## Structure
 
 ```
-main.py           # CLI entry point
+main.py                        # CLI entry point
 src/
-  browser.py      # Playwright automation
-  __init__.py     # Package marker
-pyproject.toml    # Dependencies
+  __init__.py                  # Package marker
+  session.py                   # Browser session management
+  stealth.py                    # Stealth browser initialization
+  download_formative/           # Formative homework download
+    __init__.py
+    download.py
+    index.py
+    course_handle.py
+pyproject.toml                 # Dependencies
 ```
 
 ## Commands
