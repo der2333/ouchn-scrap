@@ -1,5 +1,5 @@
 from playwright.sync_api import Locator, BrowserContext, Page, TimeoutError, Response
-from ..page_init import init_page
+from ..stealth import init_page
 from .download import download
 
 

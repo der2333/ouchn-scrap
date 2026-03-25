@@ -1,4 +1,4 @@
-from src.page_init import init_page
+from src.stealth import init_page
 from src.download_formative.index import download_formative_homework
 from playwright.sync_api import sync_playwright
 

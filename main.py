@@ -2,7 +2,7 @@ import sys
 
 import questionary
 
-from src.browser import start_browser
+from src.session import start_browser
 
 
 def print_header() -> None:
