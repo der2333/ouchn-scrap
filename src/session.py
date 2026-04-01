@@ -11,10 +11,8 @@ def start_browser(
     course_name: str,
 ) -> None:
     with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=False,
-            executable_path="C:\\Users\\13388\\AppData\\Local\\ms-playwright\\chromium-1194\\chrome-win\\chrome.exe",
-        )
+        print("正在启动中...")
+        browser = p.chromium.launch()
         ctx = browser.new_context()
         index_page = ctx.new_page()
         init_page(index_page)
@@ -26,7 +24,7 @@ def start_browser(
             index_page.locator("#agreeCheckBox").click()
             index_page.get_by_role("button", name="登 录").click()
         except TimeoutError:
-            print("浏览器错误\n")
+            print("账号或密码错误，请重试\n")
             browser.close()
             return
 

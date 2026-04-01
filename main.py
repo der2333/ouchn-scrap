@@ -43,11 +43,11 @@ def download_formative_homework_menu() -> None:
             return
         print(f"\n[批量下载形考作业答案] - 课程: {course_name}")
 
-    username: str | None = _require_input("请输入账号:")
+    username: str | None = _require_input("请输入一平台账号:")
     if username is None:
         return
 
-    password: str = questionary.password("请输入密码:").ask()
+    password: str = questionary.password("请输入一平台密码:").ask()
     if not password:
         return
 

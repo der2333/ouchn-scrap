@@ -35,6 +35,20 @@ uv run python main.py
 uv add <package>
 ```
 
+## Build
+
+```bash
+# Package with nuitka (includes browser)
+python -m nuitka --mode=onefile \
+  --playwright-include-browser=chromium_headless_shell-1208 \
+  --windows-company-name="xichen" \
+  --windows-product-name="OUCHN SCRAPER" \
+  --windows-file-version="1.0.0.0" \
+  --windows-product-version="1.0.0.0" \
+  --windows-file-description="国家开放大学学习平台自动化工具" \
+  main.py
+```
+
 ## Notes
 
 - Python 3.14+ (`.python-version`)
