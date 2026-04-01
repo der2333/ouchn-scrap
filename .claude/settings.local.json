@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "Skill",
+      "WebSearch",
+      "WebFetch",
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)"
     ]
   }
 }
