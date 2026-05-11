@@ -13,7 +13,7 @@ def download(
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
 
-        file_path = f"{save_dir}/{exam_info.get('title')}.pdf"
+        file_path = f"{save_dir}/{exam_info.get('title')}_{exam_info.get('id')}.pdf"
 
         try:
             # 使用 ctx.request 发送请求，自动使用浏览器上下文的 cookie
